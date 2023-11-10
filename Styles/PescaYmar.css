@@ -1,0 +1,34 @@
+
+
+body{
+    padding-top: 110px;
+    margin: 0;
+    background-color: rgb(235, 235, 235);
+    }
+
+.contentContainer{
+    color: black;
+
+}
+.imageContainer{
+height: 400px;
+}
+.products-grid{
+display: grid;
+grid-template-columns: repeat(5,1fr);
+}
+.finDePagina{
+    bottom: 0;
+    
+    
+}
+.product-container{
+height: 300px;
+}
+
+.img-container{
+
+}
+.info-grid{
+
+}
