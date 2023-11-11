@@ -11,51 +11,81 @@
 <body>
     <div class="header">
         <div class="leftSect">
-             <a href="PescaYmar.html" class="header-link">
-            <img src="../Imgs/Menu-logo.svg" class="menu-logo">  </a>
-            <a href="PescaYmar.html" class="header-link">
-            <img src="../Imgs/titulo.svg" class="titulo-logo"> </a>
-      
+            <div class="menu-container">
+                 <a href="PescaYmar.html" class="header-link">
+                <img src="../Imgs/Menu-logo.svg" class="menu-logo">  </a>
+            </div>
+            <div class="tit-container">
+                <a href="PescaYmar.html" class="header-link">
+                <img src="../Imgs/titulo.svg" class="titulo-logo"> </a>
+            </div>
           
         </div>
         <div class="middleSect">
-            about us,catalogo,locales
+
+            <div class="about-container"> 
+                <button class="but-containerSN">Sobre nosotros</button>
+            </div> 
+            <div class="catalogo">
+                <button
+                class="but-container">Catalogo</button>
+            </div> 
+            <div class="locales">
+                <button class="but-container">Locales</button>
+            </div>
+
         </div>
         <div class="rightSect">
-            <a href="Cart.html" class="header-link" >
-                <div class="notifications"><p class="noti-amount">0</p></div>
-                <img src="../Imgs/cart.svg" class="cart-img">
-            </a>
+            <div class="cart-container">
+                <a href="Cart.html" class="header-link" >
+                    <div class="notifications"><p class="noti-amount">0</p></div>
+                    <img src="../Imgs/cart.svg" class="cart-img">
+                </a>
+            </div>
+           <div class="log-container">
+                 <a href="loginPage.html" class="header-link"><button class="but-container"> Perfil</button></a></div>
         </div>
     </div>
 
     <div class="contentContainer">
-        <div class="imageContainer"> imagen </div>
+        <div class="imageContainer"> 
+            
+                    <img src="../Imgs/fishing.avif" class="img-grid-item"
+                    alt="img-1"> 
+                   
+            
+                    <img src="../Imgs/fishingRod.avif" class="img-grid-item"
+                    alt="img-2">
+                    
+               
+                    <img src="../Imgs/boat.avif" class="img-grid-item"
+                    alt="img-3"> 
+        
+         </div>
+
+
+        <div class="Search-container"> 
+            <nav>
+                <div class="Search">
+                    <form action="#">
+                     <input type="text" class="Searchbar" placeholder="Search">
+                      <button class="search-button"> <img src="../Imgs/buscador.svg" class="lupa">
+                       
+                      </button>
+                    </form>
+                </div>
+                <div class="category">
+                
+                    <ul>
+                        <!-- Aqui van las cetogrias  -->
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+
         <div class="products-grid">
-            <div class="product-container">
-                <div class="img-container">
-                    imagen de producto
-                </div>
-                
-                <div class="info-grid">
-                    <p>nombre producto</p>
-                    <p>precio producto</p>
-                    <button>add to cart</button>
-                     p1
-                </div>
-            </div>
-            <div class="product-container">
-                <div class="img-container">
-                    imagen de producto
-                </div>
-                
-                <div class="info-grid">
-                    <p>nombre producto</p>
-                    <p>precio producto</p>
-                    <button>add to cart</button>
-                     p2
-                </div>
-            </div>
+           
         </div>
     </div>
     
@@ -64,6 +94,6 @@
 
     
 
-    
+    <script type="module" src="../Scripts/PescayMar.js"></script>
 </body>
 </html>
