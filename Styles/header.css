@@ -105,6 +105,10 @@ width: 230px;
     transition: background-color 0.15s,
     color 0.15s;
 }
+.but-container,a{
+
+    text-decoration: none;
+}
 .but-containerSN:hover{
     background-color:   rgb(10, 3, 140);
     
@@ -131,21 +135,20 @@ width: 230px;
 .cart-img{
 height: 50px;
 }
-.notifications{
+.noti-amount{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
+    padding: 2px;
     margin-bottom: 0;
     background-color:  rgb(10, 3, 140);
-   border-radius: 10px;
+   border-radius: 12px; color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
 }
-.noti-amount{
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-}
+
 .log-container{
 display: flex;
 align-items: center;

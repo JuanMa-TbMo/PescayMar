@@ -1,4 +1,7 @@
+
+import { cart,saveToStorage} from "../Data/cart.js";
 import { products } from "../Data/products.js";
+
 
 const productContainer=document.querySelector('.products-grid');
 
@@ -7,9 +10,10 @@ const btnEL=document.querySelector('.search-button');
 const inputEL=document.querySelector('.Searchbar');
 
 function displayDataW(products) {
-
-let displayData =products.map(function(cat_items){
-  return ` <div class="product-container">
+let displayData ='';
+  products.forEach((cat_items) => {
+displayData+=
+ ` <div class="product-container">
   <div class="img-container">
      <img src="${cat_items.Image}"  >
   </div>
@@ -18,7 +22,7 @@ let displayData =products.map(function(cat_items){
       <p class="title">${cat_items.name}</p>
       <p class="price">$${cat_items.price}</p>
       <div class="addDetail">
-          <button class="addToCart">Añadir al Carrito</button>
+         <button class="addToCart js-add-to-cart " data-product-id="${cat_items.id}" data-product-name"${cat_items.name}">Añadir al Carrito</button>
         <p class="detail">  <a href="itemDetails.html">Detalles</a></p>
         
         <div class="fav-icon">
@@ -28,10 +32,9 @@ let displayData =products.map(function(cat_items){
   </div>                
 </div>`;
 });
-
-displayData=displayData.join("");
+  
 productContainer.innerHTML=displayData;
-}
+};
 
 
 window.addEventListener("DOMContentLoaded",()=>{
@@ -70,13 +73,9 @@ window.addEventListener("DOMContentLoaded",()=>{
           displayDataW(objCategory);
   
         }
-  
-  
     });
   });
 });
-
-
 
 btnEL.addEventListener('click', (e)=>{
   let searchValue = inputEL.value;
@@ -95,7 +94,44 @@ btnEL.addEventListener('click', (e)=>{
 
     inputEL.value ="";
   }
-
-
-
 });
+
+
+
+
+      window.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll('.js-add-to-cart').forEach((Node)=>{
+    Node.addEventListener('click', ()=>{
+      const prodID= Node.dataset.productId;
+let matching;
+
+      cart.forEach((item)=>{
+        if(prodID===item.productId){
+          matching= item;
+        }
+      });
+      if (matching){
+        matching.quantity+=1;
+      }
+      else{
+      cart.push({
+        productId: prodID,
+        quantity:1
+      })
+      }
+        saveToStorage()
+        
+    let cartQuantity=0;
+    cart.forEach((item)=>{
+        cartQuantity+=item.quantity;
+    });
+
+      document.querySelector('.js-noti-amount').innerHTML=cartQuantity;
+
+    
+    });        
+  });
+});
+
+
+
