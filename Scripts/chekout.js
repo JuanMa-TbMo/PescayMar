@@ -1,10 +1,14 @@
 import {cart, removeFromCart,saveToStorage} from '../Data/cart.js';
 
 import { products,getProduct } from '../Data/products.js';
-
+const checkout=document.querySelector('.js-checkout'); 
 const container= document.querySelector('.content-container');
+ let precio=0;
+ let prods=0;
+ 
 
-function displayDataC(products) {
+function displayDataC(products) { 
+    let info='';
     let displayData ='';
       products.forEach((cart_items) => {
         const productId=cart_items.productId
@@ -25,9 +29,26 @@ function displayDataC(products) {
      </div>            
  </div>`;
 
-    });
-      
+
+  precio+=matching.price;
+  prods+=cart_items.quantity;
+
+ });
+ let iva=(precio*22)/100;
+ let total=iva+precio;
+info=`
+<div class="info-grid ">
+<p>Productos: ${prods} </p>
+ <p>Precio Total: $${Math.trunc(precio)} </p>
+ <p>Iva 22%: $${Math.trunc(iva)} </p>
+ <p>Total a Pagar: $${Math.trunc(total)}</p> 
+ <button class="remToCart"> Comprar</button>
+ </div>`;
+    console.log(info);
     container.innerHTML=displayData;
+    console.log(checkout);
+    checkout.innerHTML=info;
+    
     };
 
 
@@ -38,7 +59,8 @@ function displayDataC(products) {
     window.addEventListener("DOMContentLoaded",()=>{
       displayDataC(cart);
 
-      document.querySelectorAll('.js-rem-from-cart').forEach((Node)=>{
+      document.querySelectorAll('.js-rem-from-cart').forEach((Node)=>{ 
+         
         Node.addEventListener('click', ()=>{ 
           const prodID= Node.dataset.productId;
     let matching;
@@ -50,20 +72,22 @@ function displayDataC(products) {
           });
           if (matching&&matching.quantity>1){
             matching.quantity-=1;  
-            displayDataC(cart); 
+           
           }
           else if (matching.quantity=1){
           removeFromCart(matching.productId); 
-          displayDataC(cart);
+          displayDataC(cart);  
+       
           }  
             saveToStorage();
         let cartQuantity=0;
         cart.forEach((item)=>{
-            cartQuantity+=item.quantity;
+            cartQuantity+=item.quantity; 
+            displayDataC(cart);  
         });
-        
+         
         });    
-        
+    
       });
 
     });
