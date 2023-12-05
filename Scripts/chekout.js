@@ -37,22 +37,7 @@ function displayDataC(products) {
 
     window.addEventListener("DOMContentLoaded",()=>{
       displayDataC(cart);
-          });
 
-
-          document.querySelectorAll('.js-rem-from-cart').forEach((button)=>{
-            button.addEventListener('click',()=>{
-              const prodId=Node.dataset.productId;
-              removeFromCart(prodId);
-
-              const container=document.querySelector(`.js-container-${matching.id}`);
-              console.log('1');
-
-            });
-
-          });
-
-  /*window.addEventListener("DOMContentLoaded",()=>{ 
       document.querySelectorAll('.js-rem-from-cart').forEach((Node)=>{
         Node.addEventListener('click', ()=>{ 
           const prodID= Node.dataset.productId;
@@ -68,9 +53,8 @@ function displayDataC(products) {
             displayDataC(cart); 
           }
           else if (matching.quantity=1){
-            const container=document.querySelector(`js-rem-from-cart-${matching.id} `);
           removeFromCart(matching.productId); 
-          container.remove();
+          displayDataC(cart);
           }  
             saveToStorage();
         let cartQuantity=0;
@@ -82,4 +66,4 @@ function displayDataC(products) {
         
       });
 
-    });*/
+    });
