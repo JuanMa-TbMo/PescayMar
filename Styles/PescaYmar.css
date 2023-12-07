@@ -99,12 +99,13 @@ font-weight: bold;
 }
 
 .detail,a{
-    margin-bottom: 20px;
-    margin-top: 5px;
+   height: inherit;
+   width: inherit;
     font-style: italic;
     font-weight: 100;
     color: gray;
     font-size: 15px;
+  
 }
 
 .info-grid{

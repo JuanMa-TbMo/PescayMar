@@ -3,11 +3,12 @@ import {cart, removeFromCart,saveToStorage} from '../Data/cart.js';
 import { products,getProduct } from '../Data/products.js';
 const checkout=document.querySelector('.js-checkout'); 
 const container= document.querySelector('.content-container');
- let precio=0;
- let prods=0;
+ 
  
 
 function displayDataC(products) { 
+  let precio=0;
+ let prods=0;
     let info='';
     let displayData ='';
       products.forEach((cart_items) => {
@@ -30,7 +31,7 @@ function displayDataC(products) {
  </div>`;
 
 
-  precio+=matching.price;
+  precio+=(matching.price)*cart_items.quantity;
   prods+=cart_items.quantity;
 
  });
@@ -44,22 +45,12 @@ info=`
  <p>Total a Pagar: $${Math.trunc(total)}</p> 
  <button class="remToCart"> Comprar</button>
  </div>`;
-    console.log(info);
+
     container.innerHTML=displayData;
-    console.log(checkout);
+    
     checkout.innerHTML=info;
     
-    };
-
-
-
-
-
-
-    window.addEventListener("DOMContentLoaded",()=>{
-      displayDataC(cart);
-
-      document.querySelectorAll('.js-rem-from-cart').forEach((Node)=>{ 
+    document.querySelectorAll('.js-rem-from-cart').forEach((Node)=>{ 
          
         Node.addEventListener('click', ()=>{ 
           const prodID= Node.dataset.productId;
@@ -76,8 +67,7 @@ info=`
           }
           else if (matching.quantity=1){
           removeFromCart(matching.productId); 
-          displayDataC(cart);  
-       
+          displayDataC(cart);       
           }  
             saveToStorage();
         let cartQuantity=0;
@@ -90,4 +80,14 @@ info=`
     
       });
 
-    });
+    };
+
+
+
+
+
+
+    window.addEventListener("DOMContentLoaded",()=>{
+      displayDataC(cart);
+      });
+  

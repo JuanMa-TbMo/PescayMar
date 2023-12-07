@@ -1,7 +1,7 @@
 
 import { cart,saveToStorage} from "../Data/cart.js";
 import { products } from "../Data/products.js";
-
+import {details,saveToStorageDet,removeDetail} from "../Data/Details.js";
 
 const productContainer=document.querySelector('.products-grid');
 
@@ -23,7 +23,8 @@ displayData+=
       <p class="price">$${cat_items.price}</p>
       <div class="addDetail">
          <button class="addToCart js-add-to-cart " data-product-id="${cat_items.id}" data-product-name"${cat_items.name}">Añadir al Carrito</button>
-        <p class="detail">  <a href="itemDetails.html">Detalles</a></p>
+        <p class="detail js-details" data-product-id="${cat_items.id}"> <a href="itemDetails.html"   
+        >Detalles</a></p>
         
         <div class="fav-icon">
           <img class="fav" 
@@ -100,6 +101,29 @@ btnEL.addEventListener('click', (e)=>{
 
 
       window.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll('.js-details').forEach((Node)=>{
+    Node.addEventListener('click',()=>{
+
+      const prodID=Node.dataset.productId;
+      details.forEach((item)=>{
+        if (!item) {
+          details.push({
+              productId:prodID,
+            });
+        }
+        
+        else if (prodID!==item.productId) {
+          removeDetail(item.productId); 
+          details.push({
+            productId:prodID,
+          });         
+        }
+        saveToStorageDet();
+      });
+
+    });
+  });
+
   document.querySelectorAll('.js-add-to-cart').forEach((Node)=>{
     Node.addEventListener('click', ()=>{
       const prodID= Node.dataset.productId;
@@ -127,7 +151,7 @@ let matching;
     });
 
       document.querySelector('.js-noti-amount').innerHTML=cartQuantity;
-
+      
     
     });        
   });

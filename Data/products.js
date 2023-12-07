@@ -20,7 +20,8 @@ export function getProduct(productId) {
             "Cañas",
             "Reels",
             "Todos"
-        ]
+        ],
+        descripcion:"Caña de pescar para niños de excelente calidad, con reel ideal para la primera vez."
    },
    
    {
@@ -32,7 +33,8 @@ export function getProduct(productId) {
     keywords:[
         "Reels",
         "Todos"
-    ]
+    ],
+    descripcion:" Reel de pesca rotativo perfecto para tus aventuras "
    },
    {
     id:"00111-a",
@@ -43,7 +45,8 @@ export function getProduct(productId) {
     keywords:[
         "Anzuelos",
         "Todos"
-    ]
+    ],
+    descripcion:"Anzuelos Triple Hook de bronce, dureza y calidad de excelencia"
    },
    {
     id:"01111-a",
@@ -54,7 +57,8 @@ export function getProduct(productId) {
     keywords:[
         "Tanzas",
         "Todos"
-    ]
+    ],
+    descripcion:"Blister Tanza para pesca 200 Metros, resistnete y versatil."
    },
 
 
