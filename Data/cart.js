@@ -2,7 +2,7 @@ import { products } from "./products.js";
 
 
 export let cart= JSON.parse(localStorage.getItem('cart'));
-export let details= JSON.parse(localStorage.getItem('details'));
+
 
 if(!cart) cart=
 [{
@@ -27,11 +27,4 @@ export function removeFromCart(productId){
   saveToStorage();
 };
 
-export function removeDetail(productId){
-  const newDetail = [];
-    details.forEach((detailsitem)=>{
-      if (detailsitem.productId!==productId)
-      newDetail.push(detailsitem);
-    });
-    details=newDetail;
-};
+

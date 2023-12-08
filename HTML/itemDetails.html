@@ -27,24 +27,41 @@
 
 
         <div class="container">
-            <div class="product-container">
-                <div class="img-container">
-                   <img src="${cat_items.Image}"  >
-                </div>
-                
-                <div class="info-grid">
-                    <p class="title">${cat_items.name}</p>
-                    <p class="price">$${cat_items.price}</p>
-                    <div class="addDetail">
-                       <button class="addToCart js-add-to-cart " data-product-id="${cat_items.id}" data-product-name"${cat_items.name}">Añadir al Carrito</button>
-                      
-                      <div class="fav-icon">
-                        <img class="fav" 
-                        src="../Imgs/fav.svg" alt=""></div>
-                    </div>
-                </div>                
-              </div>
+            
+            
+        </div>  
+        <div class="descrip"> 
         </div>
+
+        <div class="Related-container">
+            <div class="Search-container"> 
+                <nav>
+                    <div class="Search">
+                        <form action="#">
+                         <input type="text" class="Searchbar" placeholder="Search">
+                          <button class="search-button"> <img src="../Imgs/buscador.svg" class="lupa">
+                           
+                          </button>
+                        </form>
+                    </div>
+                    <div class="category">
+                    
+                        <ul>
+                            <div></div>
+                            <!-- Aqui van las cetogrias  -->
+                        </ul>
+                    </nav>
+    
+                </div>
+        <div class="products-grid">
+                
+                </div>
+            </div>
+    
+        </div>
+        </div>
+
+        <script type=Module  src="../Scripts/detail.js"></script>
     </body>
 
 </html>

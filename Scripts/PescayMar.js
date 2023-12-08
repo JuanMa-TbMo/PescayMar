@@ -4,7 +4,8 @@ import { products } from "../Data/products.js";
 import {details,saveToStorageDet,removeDetail} from "../Data/Details.js";
 
 const productContainer=document.querySelector('.products-grid');
-
+console.log(productContainer);
+ 
 const ulEL= document.querySelector("ul");
 const btnEL=document.querySelector('.search-button');
 const inputEL=document.querySelector('.Searchbar');
@@ -101,25 +102,20 @@ btnEL.addEventListener('click', (e)=>{
 
 
       window.addEventListener("DOMContentLoaded",()=>{
-  document.querySelectorAll('.js-details').forEach((Node)=>{
+  
+ document.querySelectorAll('.js-details').forEach((Node)=>{
     Node.addEventListener('click',()=>{
 
       const prodID=Node.dataset.productId;
-      details.forEach((item)=>{
-        if (!item) {
-          details.push({
-              productId:prodID,
-            });
+        if (details.id==="no detail") {
+          details.id=prodID;
         }
-        
-        else if (prodID!==item.productId) {
-          removeDetail(item.productId); 
-          details.push({
-            productId:prodID,
-          });         
+        else if (prodID!==details.id) {
+          removeDetail(); 
+          details.id=prodID;        
         }
         saveToStorageDet();
-      });
+      
 
     });
   });
