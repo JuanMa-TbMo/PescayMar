@@ -29,7 +29,7 @@ displayData+=
         
         <div class="fav-icon">
           <img class="fav" 
-          src="../Imgs/fav.svg" alt=""></div>
+          src="/Imgs/fav.svg" alt=""></div>
       </div>
   </div>                
 </div>`;
