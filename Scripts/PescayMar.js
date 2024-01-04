@@ -24,12 +24,12 @@ displayData+=
       <p class="price">$${cat_items.price}</p>
       <div class="addDetail">
          <button class="addToCart js-add-to-cart " data-product-id="${cat_items.id}" data-product-name"${cat_items.name}">Añadir al Carrito</button>
-        <p class="detail js-details" data-product-id="${cat_items.id}"> <a href="HTML/itemDetails.html"   
+        <p class="detail js-details" data-product-id="${cat_items.id}"> <a href="itemDetails.html"   
         >Detalles</a></p>
         
         <div class="fav-icon">
           <img class="fav" 
-          src="/Imgs/fav.svg" alt=""></div>
+          src="Imgs/fav.svg" alt=""></div>
       </div>
   </div>                
 </div>`;

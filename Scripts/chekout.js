@@ -12,7 +12,7 @@ function displayDataC(products) {
     let info='';
     let displayData ='';
       products.forEach((cart_items) => {
-        const productId=cart_items.productId
+        const productId=cart_items.productId;
         let matching=getProduct(productId);
     displayData+=
      ` <div class="product-container js-container data-product-id=${matching.id}">
@@ -25,7 +25,7 @@ function displayDataC(products) {
              <button class="remToCart js-rem-from-cart" data-product-id=${matching.id} > Remover del Carrito</button>
            <div class="fav-icon">
              <img class="fav" 
-             src="../Imgs/fav.svg"></div>
+             src="Imgs/fav.svg"></div>
            </div>
      </div>            
  </div>`;
